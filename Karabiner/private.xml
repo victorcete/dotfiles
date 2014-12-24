@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <root>
 <item>
-    <name>Remap Caps Lock to Master Key</name>
+    <name>Remap caps lock to Master key</name>
     <appendix>Maps F19 key to Command + Shift + Option + Control</appendix>
 
     <identifier>caps_lock_to_master</identifier>
