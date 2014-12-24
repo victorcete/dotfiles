@@ -13,7 +13,7 @@ config windowHintsDuration 2
 config windowHintsSpread true
 
 #######################################################################################
-# Master key => bind to F19                                                            #
+# Master key => bind to F19                                                           #
 # !!! Remember to install Seil + Karabiner                                            #
 # https://pqrs.org/index.html.en                                                      #
 # http://www.leancrew.com/all-this/2012/11/shift-control-option-command-on-caps-lock/ #
@@ -92,28 +92,31 @@ default 2monitor    resolutions:${mon-laptop};${mon-ext-1};
 default 3monitor    resolutions:${mon-laptop};${mon-ext-1};${mon-ext-2}
 
 # layouts: 1 monitor
-layout 1monitor 'Adium':REPEAT                           ${1-top-half}
-layout 1monitor 'Firefox':REPEAT                         ${1-full}
-layout 1monitor 'Google Chrome':REPEAT                   ${1-full}
-layout 1monitor 'iTerm':MAIN_FIRST                       ${1-full}
-layout 1monitor 'Mail':MAIN_FIRST                        ${1-bottom-half}
-layout 1monitor 'Safari':REPEAT                          ${1-full}
+layout 1monitor 'Adium':REPEAT              ${1-top-half}
+layout 1monitor 'Firefox':REPEAT            ${1-full}
+layout 1monitor 'Google Chrome':REPEAT      ${1-full}
+layout 1monitor 'iTerm':MAIN_FIRST          ${1-full}
+layout 1monitor 'Mail':MAIN_FIRST           ${1-bottom-half}
+layout 1monitor 'Safari':REPEAT             ${1-full}
+layout 1monitor 'Spotify':REPEAT            ${1-full}
 
 # layouts: 2 monitor
-layout 2monitor 'Adium':REPEAT                          ${2-full}
-layout 2monitor 'Firefox':REPEAT                        ${1-full}
-layout 2monitor 'Google Chrome':REPEAT                  ${1-full}
-layout 2monitor 'iTerm':MAIN_FIRST                      ${2-full} | ${1-left-half}
-layout 2monitor 'Mail':MAIN_FIRST                       ${2-full}
-layout 2monitor 'Safari':REPEAT                         ${1-full}
+layout 2monitor 'Adium':REPEAT              ${2-full}
+layout 2monitor 'Firefox':REPEAT            ${1-full}
+layout 2monitor 'Google Chrome':REPEAT      ${1-full}
+layout 2monitor 'iTerm':MAIN_FIRST          ${2-full} | ${1-left-half}
+layout 2monitor 'Mail':MAIN_FIRST           ${2-full}
+layout 2monitor 'Safari':REPEAT             ${1-full}
+layout 2monitor 'Spotify':REPEAT            ${2-full}
 
 # layouts: 3 monitor
-layout 3monitor 'Adium':REPEAT                          ${1-top-half}
-layout 3monitor 'Firefox':REPEAT                        ${2-full}
-layout 3monitor 'Google Chrome':REPEAT                  ${2-full}
-layout 3monitor 'iTerm':MAIN_FIRST                      ${3-full} | ${1-full}
-layout 3monitor 'Mail':MAIN_FIRST                       ${1-bottom-half}
-layout 3monitor 'Safari':REPEAT                         ${2-full}
+layout 3monitor 'Adium':REPEAT              ${1-top-half}
+layout 3monitor 'Firefox':REPEAT            ${2-full}
+layout 3monitor 'Google Chrome':REPEAT      ${2-full}
+layout 3monitor 'iTerm':MAIN_FIRST          ${3-full} | ${1-full}
+layout 3monitor 'Mail':MAIN_FIRST           ${1-bottom-half}
+layout 3monitor 'Safari':REPEAT             ${2-full}
+layout 3monitor 'Spotify':REPEAT            ${3-full}
 
 ####################
 # Bindings section #
@@ -178,8 +181,9 @@ bind up:${hyper}       focus up
 bind down:${hyper}     focus down
 
 # bindings: applications
-bind c:${hyper} focus 'Google Chrome'
-bind m:${hyper} focus 'Mail'
-bind i:${hyper} focus 'iTerm'
 bind a:${hyper} focus 'Adium'
+bind c:${hyper} focus 'Google Chrome'
 bind f:${hyper} focus 'Firefox'
+bind i:${hyper} focus 'iTerm'
+bind m:${hyper} focus 'Mail'
+bind s:${hyper} focus 'Spotify'
