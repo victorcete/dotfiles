@@ -18,7 +18,7 @@ config windowHintsSpread true
 # https://pqrs.org/index.html.en                                                      #
 # http://www.leancrew.com/all-this/2012/11/shift-control-option-command-on-caps-lock/ #
 #######################################################################################
-alias hyper ctrl;shift;alt;cmd
+alias master ctrl;shift;alt;cmd
 
 ####################
 # aliases: screens #
@@ -134,56 +134,56 @@ bind pad8   ${top-half}
 bind pad9   ${corner-top-right}
 
 # bindings: locations on laptop keyboard
-bind 4:${hyper} ${top-half}
-bind 5:${hyper} ${bottom-half}
-bind 6:${hyper} ${left-half}
-bind 7:${hyper} ${right-half}
-bind 8:${hyper} ${full}
+bind 4:${master} ${top-half}
+bind 5:${master} ${bottom-half}
+bind 6:${master} ${left-half}
+bind 7:${master} ${right-half}
+bind 8:${master} ${full}
 
 # bindings: focus/throw on external keyboard
 bind pad.   focus behind
 bind pad+   throw next resize
 
 # bindings: focus/throw on laptop keyboard
-bind b:${hyper} focus behind
-bind n:${hyper} throw next resize
+bind b:${master} focus behind
+bind n:${master} throw next resize
 
 # bindings: reload Slate on external keyboard
 bind pad*   relaunch
 
 # bindings: reload Slate on laptop keyboard
-bind 0:${hyper} relaunch
+bind 0:${master} relaunch
 
 # bindings: layouts on external keyboard
-bind pad1:${hyper}  layout 1monitor
-bind pad2:${hyper}  layout 2monitor
-bind pad3:${hyper}  layout 3monitor
+bind pad1:${master}  layout 1monitor
+bind pad2:${master}  layout 2monitor
+bind pad3:${master}  layout 3monitor
 
 # bindings: layouts on laptop keyboard
-bind 1:${hyper}     layout 1monitor
-bind 2:${hyper}     layout 2monitor
-bind 3:${hyper}     layout 3monitor
+bind 1:${master}     layout 1monitor
+bind 2:${master}     layout 2monitor
+bind 3:${master}     layout 3monitor
 
 # bindings: hints on external keyboard
 bind pad0       ${displayHints}
 
 # bindings: hints on laptop keyboard
-bind tab:${hyper}  ${displayHints}
+bind tab:${master}  ${displayHints}
 
 # bindings: external keyboard/pad unused
 #bind padEnter
 #bind pad/
 
 # bindings: window focus
-bind right:${hyper}    focus right
-bind left:${hyper}     focus left
-bind up:${hyper}       focus up
-bind down:${hyper}     focus down
+bind right:${master}    focus right
+bind left:${master}     focus left
+bind up:${master}       focus up
+bind down:${master}     focus down
 
 # bindings: applications
-bind a:${hyper} focus 'Adium'
-bind c:${hyper} focus 'Google Chrome'
-bind f:${hyper} focus 'Firefox'
-bind i:${hyper} focus 'iTerm'
-bind m:${hyper} focus 'Mail'
-bind s:${hyper} focus 'Spotify'
+bind a:${master} focus 'Adium'
+bind c:${master} focus 'Google Chrome'
+bind f:${master} focus 'Firefox'
+bind i:${master} focus 'iTerm'
+bind m:${master} focus 'Mail'
+bind s:${master} focus 'Spotify'
