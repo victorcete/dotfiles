@@ -2,18 +2,17 @@
 # Basic config #
 ################
 config defaultToCurrentScreen true
-config secondsBetweenRepeat 0.1
 config checkDefaultsOnLoad true
-config nudgePercentOf screenSize
-config resizePercentOf screenSize
-config focusCheckWidthMax 3000
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
-config windowHintsDuration 2
+config windowHintsDuration 4
 config windowHintsSpread true
+config windowHintsWidth 120
+config windowHintsHeight 120
+config windowHintsFontSize 75
 
 #######################################################################################
-# Master key => bind to F19                                                           #
+# Master key => bind to F19 (keycode = 80)                                            #
 # !!! Remember to install Seil + Karabiner                                            #
 # https://pqrs.org/index.html.en                                                      #
 # http://www.leancrew.com/all-this/2012/11/shift-control-option-command-on-caps-lock/ #
