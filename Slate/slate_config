@@ -92,30 +92,35 @@ default 3monitor    resolutions:${mon-laptop};${mon-ext-1};${mon-ext-2}
 
 # layouts: 1 monitor
 layout 1monitor 'Adium':REPEAT              ${1-top-half}
+layout 1monitor 'Mail':REPEAT               ${1-bottom-half}
 layout 1monitor 'Firefox':REPEAT            ${1-full}
 layout 1monitor 'Google Chrome':REPEAT      ${1-full}
-layout 1monitor 'iTerm':MAIN_FIRST          ${1-full}
-layout 1monitor 'Mail':MAIN_FIRST           ${1-bottom-half}
+layout 1monitor 'iTerm':REPEAT              ${1-full}
 layout 1monitor 'Safari':REPEAT             ${1-full}
 layout 1monitor 'Spotify':REPEAT            ${1-full}
 
 # layouts: 2 monitor
-layout 2monitor 'Adium':REPEAT              ${2-full}
-layout 2monitor 'Firefox':REPEAT            ${1-full}
-layout 2monitor 'Google Chrome':REPEAT      ${1-full}
-layout 2monitor 'iTerm':MAIN_FIRST          ${2-full} | ${1-left-half}
-layout 2monitor 'Mail':MAIN_FIRST           ${2-full}
+## first
+layout 2monitor 'Adium':REPEAT              ${1-top-half}
+layout 2monitor 'Mail':REPEAT               ${1-bottom-half}
 layout 2monitor 'Safari':REPEAT             ${1-full}
-layout 2monitor 'Spotify':REPEAT            ${2-full}
+layout 2monitor 'Spotify':REPEAT            ${1-full}
+## second
+layout 2monitor 'Firefox':REPEAT            ${2-full}
+layout 2monitor 'Google Chrome':REPEAT      ${2-full}
+layout 2monitor 'iTerm':REPEAT              ${2-full}
 
 # layouts: 3 monitor
+## first
 layout 3monitor 'Adium':REPEAT              ${1-top-half}
+layout 3monitor 'Mail':REPEAT               ${1-bottom-half}
+layout 3monitor 'Spotify':REPEAT            ${1-full}
+## second
 layout 3monitor 'Firefox':REPEAT            ${2-full}
 layout 3monitor 'Google Chrome':REPEAT      ${2-full}
-layout 3monitor 'iTerm':MAIN_FIRST          ${3-full} | ${1-full}
-layout 3monitor 'Mail':MAIN_FIRST           ${1-bottom-half}
 layout 3monitor 'Safari':REPEAT             ${2-full}
-layout 3monitor 'Spotify':REPEAT            ${3-full}
+## third
+layout 3monitor 'iTerm':MAIN_FIRST          ${3-full}
 
 ####################
 # Bindings section #
