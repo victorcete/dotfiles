@@ -21,17 +21,18 @@ fi
 # Create a backup of the private.xml config, just in case
 config=private.xml
 config_backup=private.xml.bak
-config_local=./private.xml
+config_local="/Users/$(whoami)/.dotfiles/Karabiner/private.xml"
 
 if [ -f "${karabiner_dir}${config}" ]; then
     ok "Found previous Karabiner's config file"
-    /bin/cp "${karabiner_dir}${config}" "${karabiner_dir}${config_backup}"
+    /bin/mv "${karabiner_dir}${config}" "${karabiner_dir}${config_backup}"
     ok "I've created a backup for you on ${karabiner_dir}${config_backup}"
-    /bin/cp "${config_local}" "${karabiner_dir}${config}"
-    ok "I've copied the new config \o/"
 else
     warn "I couldn't find any previous config so... no backup for you"
 fi
 
+# Create symlink
+/bin/ln -s "${config_local}" "${karabiner_dir}${config}"
+ok "New config symlink created. ${karabiner_dir}${config} -> ${config_local}"
 ok "Now open Karabiner, Reload XML and select the new key map"
 exit 0

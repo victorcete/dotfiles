@@ -21,17 +21,18 @@ fi
 # Create a backup of the existing configuration in case it already exists
 slate_cfg="/Users/$(whoami)/.slate"
 slate_cfg_backup="/Users/$(whoami)/.slate.bak"
-slate_cfg_local="./slate_config"
+slate_cfg_local="/Users/$(whoami)/.dotfiles/Slate/slate_config"
 
 if [ -f "${slate_cfg}" ]; then
     ok "Found previous Slate's config file"
-    /bin/cp "${slate_cfg}" "${slate_cfg_backup}"
+    /bin/mv "${slate_cfg}" "${slate_cfg_backup}"
     ok "I've created a backup for you on ${slate_cfg_backup}"
-    /bin/cp "${slate_cfg_local}" "${slate_cfg}"
-    ok "I've copied the new config \o/"
 else
     warn "I couldn't find any previous config so... no backup for you"
 fi
 
+# Create symlink
+/bin/ln -s "${slate_cfg_local}" "${slate_cfg}"
+ok "New config symlink created. {slate_cfg_local} -> ${slate_cfg}"
 ok "Reload Slate configuration and that's it"
 exit 0

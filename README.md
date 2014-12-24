@@ -29,6 +29,11 @@ Slate is a Window Manager application for OS X. Before I switched from Linux to 
 
 ## Installation instructions
 
+All the scripts will assume that the repo is cloned under ~/.dotfiles to create the corresponding symlinks.
+```bash
+git clone https://github.com/victorcete/dotfiles.git ~/.dotfiles
+```
+
 ### Seil
 
 - Under the 'Setting' tab, change the caps lock key to keycode 80 (the equilavent of F19)
@@ -38,7 +43,6 @@ Slate is a Window Manager application for OS X. Before I switched from Linux to 
 
 - Run the scripts provided on this repo:
 ```bash
-git clone https://github.com/victorcete/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles/Karabiner ; ./install.sh
 cd ~/.dotfiles/Slate ; ./install.sh
 ```
