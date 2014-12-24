@@ -1,5 +1,18 @@
 # victorcete's dotfiles
 
+The aim is to have as much automated configuration as possible when you have to use a new Mac workstation. I tend to use the same apps, editors, window managers in both personal and professional environments so if I get a new Mac I won't need to go through the tedious process of configuring my settings.
+
+## TODO list
+
+- Homebrew formulaes
+- Set some OS X defaults
+- iTerm2
+- Sublime Text config
+- Git configuration
+- tmux
+- oh-my-zsh configuration
+- Adium
+
 ## Prerequisites
 
 ### [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
