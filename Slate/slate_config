@@ -92,29 +92,28 @@ default 2monitor    resolutions:${mon-laptop};${mon-ext-1};
 default 3monitor    resolutions:${mon-laptop};${mon-ext-1};${mon-ext-2}
 
 # layouts: 1 monitor
-layout 1monitor 'iTerm':MAIN_FIRST                       ${1-full}
-layout 1monitor 'Safari':REPEAT                          ${1-full}
-layout 1monitor 'Google Chrome':REPEAT                   ${1-full}
-layout 1monitor 'Firefox':REPEAT                         ${1-full}
-layout 1monitor 'Mail':MAIN_FIRST                        ${1-bottom-half}
 layout 1monitor 'Adium':REPEAT                           ${1-top-half}
+layout 1monitor 'Firefox':REPEAT                         ${1-full}
+layout 1monitor 'Google Chrome':REPEAT                   ${1-full}
+layout 1monitor 'iTerm':MAIN_FIRST                       ${1-full}
+layout 1monitor 'Mail':MAIN_FIRST                        ${1-bottom-half}
+layout 1monitor 'Safari':REPEAT                          ${1-full}
 
 # layouts: 2 monitor
-layout 2monitor 'iTerm':MAIN_FIRST                      ${2-full} | ${1-left-half}
-layout 2monitor 'Safari':REPEAT                         ${1-full}
-layout 2monitor 'Google Chrome':REPEAT                  ${1-full}
+layout 2monitor 'Adium':REPEAT                          ${2-full}
 layout 2monitor 'Firefox':REPEAT                        ${1-full}
+layout 2monitor 'Google Chrome':REPEAT                  ${1-full}
+layout 2monitor 'iTerm':MAIN_FIRST                      ${2-full} | ${1-left-half}
 layout 2monitor 'Mail':MAIN_FIRST                       ${2-full}
-layout 2monitor 'Xcode':REPEAT                          ${1-full}
-layout 2monitor 'Eclipse':REPEAT                        ${1-full}
-layout 2monitor 'iTunes':REPEAT                         ${1-full}
+layout 2monitor 'Safari':REPEAT                         ${1-full}
 
 # layouts: 3 monitor
-layout 3monitor 'Mail':MAIN_FIRST                       ${1-bottom-half}
 layout 3monitor 'Adium':REPEAT                          ${1-top-half}
-layout 3monitor 'Google Chrome':REPEAT                  ${2-full}
 layout 3monitor 'Firefox':REPEAT                        ${2-full}
+layout 3monitor 'Google Chrome':REPEAT                  ${2-full}
 layout 3monitor 'iTerm':MAIN_FIRST                      ${3-full} | ${1-full}
+layout 3monitor 'Mail':MAIN_FIRST                       ${1-bottom-half}
+layout 3monitor 'Safari':REPEAT                         ${2-full}
 
 ####################
 # Bindings section #
