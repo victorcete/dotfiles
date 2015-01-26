@@ -108,17 +108,18 @@ layout 2monitor 'Mail':REPEAT               ${1-bottom-half}
 layout 2monitor 'Safari':REPEAT             ${1-full}
 layout 2monitor 'Spotify':REPEAT            ${1-full}
 layout 2monitor 'Sublime Text':REPEAT       ${1-full}
+layout 2monitor 'Telegram':REPEAT           ${1-full}
 ## second
 layout 2monitor 'Firefox':REPEAT            ${2-full}
 layout 2monitor 'Google Chrome':REPEAT      ${2-full}
 layout 2monitor 'iTerm':REPEAT              ${2-full}
-layout 2monitor 'Telegram':REPEAT           ${2-full}
 
 # layouts: 3 monitor
 ## first
 layout 3monitor 'Adium':REPEAT              ${1-top-half}
 layout 3monitor 'Mail':REPEAT               ${1-bottom-half}
 layout 3monitor 'Spotify':REPEAT            ${1-full}
+layout 3monitor 'Telegram':REPEAT           ${1-full}
 ## second
 layout 3monitor 'Firefox':REPEAT            ${2-full}
 layout 3monitor 'Google Chrome':REPEAT      ${2-full}
@@ -126,7 +127,6 @@ layout 3monitor 'Safari':REPEAT             ${2-full}
 ## third
 layout 3monitor 'iTerm':REPEAT              ${3-full}
 layout 3monitor 'Sublime Text':REPEAT       ${3-full}
-layout 3monitor 'Telegram':REPEAT           ${3-full}
 
 ####################
 # Bindings section #
