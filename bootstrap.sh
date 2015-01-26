@@ -22,10 +22,8 @@ brew install git
 
 # Set up Github SSH keys
 ok "Generating SSH key for Github"
-read -p "Enter the email you want to link with the SSH key: " email
-echo
+read -p "Enter your email: " email ; echo
 ssh-keygen -t rsa -C "$email" -f $HOME/.ssh/id_rsa_github
 cat ~/.ssh/id_rsa_github.pub
 cat ~/.ssh/id_rsa_github.pub | pbcopy
-ok "Your ssh public key has been printed above and copied to the clipboard for convenience. Add it to your Github account at https://github.com/account/ssh and press enter to continue."
- 
+ok "Public key copied on the clipboard. Now, add the key to your Github account - https://github.com/account/ssh and press enter to continue."
