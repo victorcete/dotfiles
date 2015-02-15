@@ -4,35 +4,60 @@ The aim is to have as much automated configuration as possible when you have to 
 
 ## TODO list
 
-- Homebrew formulaes
 - Set some OS X defaults
-- iTerm2
-- Sublime Text config
-- Git configuration
-- tmux
-- oh-my-zsh configuration
-- Adium
+- Applications configuration
+  - Adium
+  - git
+  - iTerm2
+  - oh-my-zsh
+  - Sublime Text
+  - tmux
+  - vim
 
-## Prerequisites
+## Current apps
 
-### [Seil](https://pqrs.org/osx/karabiner/seil.html.en)
+### Installed with brew
 
-Seil is an utility to map your Capslock key to another key.
+#### ack
+#### boot2docker
+#### coreutils
+#### docker
+#### fig
+#### findutils
+#### fortune
+#### git
+#### moreutils
+#### vim
+#### watch
+#### wget
 
-### [Karabiner](https://pqrs.org/osx/karabiner/index.html.en)
+### Installed with brew-cask
 
-Karabiner is a keyboard customizer for OS X, I use it to assign ctrl+alt+command+shift to the Caps Lock key and then use that "master" key in Slate.
+#### Adium
+#### Chrome
+#### Firefox
+#### iTerm2
+#### Karabiner
+#### Seil
+#### Slate
+#### Soundcleod
+#### Spotify
+#### Sublime Text 2
+#### The Unarchiver
+#### Vagrant
+#### Virtualbox
+#### VLC Media Player
 
-### [Slate](https://github.com/jigish/slate)
-
-Slate is a Window Manager application for OS X. Before I switched from Linux to Mac, I was using [i3wm](https://i3wm.org/) and I needed more or less the same power and flexibility. I am quite happy with Slate, for the moment :)
-
-## Installation instructions
+## Installation steps
 
 All the scripts will assume that the repo is cloned under ~/.dotfiles to create the corresponding symlinks.
 ```bash
 git clone https://github.com/victorcete/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./bootstrap.sh
 ```
+
+After that you should configure the Window Manager apps:
 
 ### Seil
 
