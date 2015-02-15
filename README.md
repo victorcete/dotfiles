@@ -30,8 +30,8 @@ The aim is to have as much automated configuration as possible when you have to 
   - watch
   - wget
 
-- Installed with brew-cask
-  - Adium
+- Installed with brew cask
+  - Adium
   - Chrome
   - Firefox
   - iTerm2
