@@ -17,7 +17,6 @@ The aim is to have as much automated configuration as possible when you have to 
 ## Current apps
 
 ### Installed with brew
-
 - ack
 - boot2docker
 - coreutils
@@ -32,7 +31,6 @@ The aim is to have as much automated configuration as possible when you have to 
 - wget
 
 ### Installed with brew-cask
-
 - Adium
 - Chrome
 - Firefox
