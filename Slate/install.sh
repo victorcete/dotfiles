@@ -8,16 +8,6 @@
 # Include bash helpers
 source ../misc/lib.sh
 
-# Check if Slate is present on the system
-slate_dir="/Applications/Slate.app/"
-
-if [ -d "${slate_dir}" ]; then
-    ok "Found Slate in ${slate_dir}"
-else
-    error "Cannot found Slate in ${slate_dir}. Please install it before proceeding"
-    exit 1
-fi
-
 # Create a backup of the existing configuration in case it already exists
 slate_cfg="/Users/$(whoami)/.slate"
 slate_cfg_backup="/Users/$(whoami)/.slate.bak"

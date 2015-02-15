@@ -42,6 +42,7 @@ git clone https://github.com/victorcete/dotfiles.git ~/.dotfiles
 ### Karabiner + Slate
 
 - Enable Karabiner and Slate on OS X Privacy settings under: System Preferences > Security & Privacy > Privacy > Accesibility
+- Go to System Preferences > Keyboard > Modifier keys > Set Caps Lock to 'No action'
 - Run the scripts provided on this repo:
 ```bash
 cd ~/.dotfiles/Karabiner ; ./install.sh
