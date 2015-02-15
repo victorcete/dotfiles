@@ -21,7 +21,7 @@ The aim is to have as much automated configuration as possible when you have to 
   - boot2docker
   - coreutils
   - docker
-  - fig
+  - fig
   - findutils
   - fortune
   - git
