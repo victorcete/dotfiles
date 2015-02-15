@@ -34,7 +34,7 @@ The aim is to have as much automated configuration as possible when you have to 
   - Adium
   - Chrome
   - Firefox
-  - iTerm2
+  - iTerm2
   - Karabiner
   - Seil
   - Slate
