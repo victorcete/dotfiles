@@ -16,35 +16,35 @@ The aim is to have as much automated configuration as possible when you have to 
 
 ## Current apps
 
-### Installed with brew
-- ack
-- boot2docker
-- coreutils
-- docker
-- fig
-- findutils
-- fortune
-- git
-- moreutils
-- vim
-- watch
-- wget
+- Installed with brew
+  - ack
+  - boot2docker
+  - coreutils
+  - docker
+  - fig
+  - findutils
+  - fortune
+  - git
+  - moreutils
+  - vim
+  - watch
+  - wget
 
-### Installed with brew-cask
-- Adium
-- Chrome
-- Firefox
-- iTerm2
-- Karabiner
-- Seil
-- Slate
-- Soundcleod
-- Spotify
-- Sublime Text 2
-- The Unarchiver
-- Vagrant
-- Virtualbox
-- VLC Media Player
+- Installed with brew-cask
+  - Adium
+  - Chrome
+  - Firefox
+  - iTerm2
+  - Karabiner
+  - Seil
+  - Slate
+  - Soundcleod
+  - Spotify
+  - Sublime Text 2
+  - The Unarchiver
+  - Vagrant
+  - Virtualbox
+  - VLC Media Player
 
 ## Installation steps
 
