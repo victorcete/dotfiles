@@ -96,6 +96,7 @@ layout 1monitor 'Mail':REPEAT               ${1-full}
 layout 1monitor 'Firefox':REPEAT            ${1-full}
 layout 1monitor 'Google Chrome':REPEAT      ${1-full}
 layout 1monitor 'iTerm':REPEAT              ${1-full}
+layout 1monitor 'Keynote':REPEAT            ${1-full}
 layout 1monitor 'Safari':REPEAT             ${1-full}
 layout 1monitor 'SoundCleod':REPEAT         ${1-full}
 layout 1monitor 'Spotify':REPEAT            ${1-full}
@@ -105,6 +106,7 @@ layout 1monitor 'Telegram':REPEAT           ${1-full}
 # layouts: 2 monitor
 ## first
 layout 2monitor 'Adium':REPEAT              ${1-full}
+layout 2monitor 'Keynote':REPEAT            ${1-full}
 layout 2monitor 'Mail':REPEAT               ${1-full}
 layout 2monitor 'Safari':REPEAT             ${1-full}
 layout 2monitor 'SoundCleod':REPEAT         ${1-full}
@@ -126,6 +128,7 @@ layout 3monitor 'Telegram':REPEAT           ${1-full}
 ## second
 layout 3monitor 'Firefox':REPEAT            ${2-full}
 layout 3monitor 'Google Chrome':REPEAT      ${2-full}
+layout 3monitor 'Keynote':REPEAT            ${2-full}
 layout 3monitor 'Safari':REPEAT             ${2-full}
 ## third
 layout 3monitor 'iTerm':REPEAT              ${3-full}
@@ -199,6 +202,7 @@ bind c:${master} focus 'Google Chrome'
 bind e:${master} focus 'Sublime Text'
 bind f:${master} focus 'Firefox'
 bind i:${master} focus 'iTerm'
+bind k:${master} focus 'Keynote'
 bind m:${master} focus 'Mail'
 bind s:${master} focus 'Spotify'
 bind t:${master} focus 'Telegram'
