@@ -91,21 +91,23 @@ default 2monitor    resolutions:${mon-laptop};${mon-ext-1};
 default 3monitor    resolutions:${mon-laptop};${mon-ext-1};${mon-ext-2}
 
 # layouts: 1 monitor
-layout 1monitor 'Adium':REPEAT              ${1-top-half}
-layout 1monitor 'Mail':REPEAT               ${1-bottom-half}
+layout 1monitor 'Adium':REPEAT              ${1-full}
+layout 1monitor 'Mail':REPEAT               ${1-full}
 layout 1monitor 'Firefox':REPEAT            ${1-full}
 layout 1monitor 'Google Chrome':REPEAT      ${1-full}
 layout 1monitor 'iTerm':REPEAT              ${1-full}
 layout 1monitor 'Safari':REPEAT             ${1-full}
+layout 1monitor 'SoundCleod':REPEAT         ${1-full}
 layout 1monitor 'Spotify':REPEAT            ${1-full}
 layout 1monitor 'Sublime Text':REPEAT       ${1-full}
 layout 1monitor 'Telegram':REPEAT           ${1-full}
 
 # layouts: 2 monitor
 ## first
-layout 2monitor 'Adium':REPEAT              ${1-top-half}
-layout 2monitor 'Mail':REPEAT               ${1-bottom-half}
+layout 2monitor 'Adium':REPEAT              ${1-full}
+layout 2monitor 'Mail':REPEAT               ${1-full}
 layout 2monitor 'Safari':REPEAT             ${1-full}
+layout 2monitor 'SoundCleod':REPEAT         ${1-full}
 layout 2monitor 'Spotify':REPEAT            ${1-full}
 layout 2monitor 'Sublime Text':REPEAT       ${1-full}
 layout 2monitor 'Telegram':REPEAT           ${1-full}
@@ -116,8 +118,9 @@ layout 2monitor 'iTerm':REPEAT              ${2-full}
 
 # layouts: 3 monitor
 ## first
-layout 3monitor 'Adium':REPEAT              ${1-top-half}
-layout 3monitor 'Mail':REPEAT               ${1-bottom-half}
+layout 3monitor 'Adium':REPEAT              ${1-full}
+layout 3monitor 'Mail':REPEAT               ${1-full}
+layout 3monitor 'SoundCleod':REPEAT         ${1-full}
 layout 3monitor 'Spotify':REPEAT            ${1-full}
 layout 3monitor 'Telegram':REPEAT           ${1-full}
 ## second
@@ -199,3 +202,4 @@ bind i:${master} focus 'iTerm'
 bind m:${master} focus 'Mail'
 bind s:${master} focus 'Spotify'
 bind t:${master} focus 'Telegram'
+bind u:${master} focus 'SoundCleod'

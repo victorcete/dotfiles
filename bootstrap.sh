@@ -79,7 +79,7 @@ require_brew watch
 require_brew wget
 
 ### Editors
-require_brew vim --override-system-vi
+require_brew vim --override-system-vim
 
 ### Docker
 require_brew fig
