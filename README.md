@@ -29,6 +29,7 @@ The aim is to have as much automated configuration as possible when you have to 
   - vim
   - watch
   - wget
+  - wireshark
 
 - Installed with brew cask
   - Adium
