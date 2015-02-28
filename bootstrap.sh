@@ -86,8 +86,14 @@ require_brew fig
 require_brew docker
 require_brew boot2docker
 
+### Stores
+require_brew redis
+
 ### Misc
 require_brew fortune
+
+### Programming languages
+require_brew go --with-cc-common
 
 #############################
 # 3. Brew Cask applications #
