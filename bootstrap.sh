@@ -89,9 +89,6 @@ require_brew boot2docker
 ### Misc
 require_brew fortune
 
-### Networking
-require_brew wireshark --with-qt
-
 #############################
 # 3. Brew Cask applications #
 #############################
