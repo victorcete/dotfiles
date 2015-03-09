@@ -21,6 +21,7 @@ The aim is to have as much automated configuration as possible when you have to 
   - boot2docker
   - coreutils
   - docker
+  - exercism.io
   - fig
   - findutils
   - fortune
@@ -29,23 +30,23 @@ The aim is to have as much automated configuration as possible when you have to 
   - vim
   - watch
   - wget
-  - wireshark
 
 - Installed with brew cask
-  - Adium
-  - Chrome
-  - Firefox
+  - adium
+  - chrome
+  - firefox
   - iTerm2
-  - Karabiner
-  - Seil
-  - Slate
-  - Soundcleod
-  - Spotify
-  - Sublime Text 2
-  - The Unarchiver
-  - Vagrant
-  - Virtualbox
-  - VLC Media Player
+  - karabiner
+  - seil
+  - slate
+  - soundcleod
+  - spotify
+  - sublime Text 2
+  - sshfs
+  - the Unarchiver
+  - vagrant
+  - virtualbox
+  - vlc
 
 ## Installation steps
 

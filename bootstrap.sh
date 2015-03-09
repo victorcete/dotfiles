@@ -115,6 +115,7 @@ require_cask spotify
 ### Utilities
 require_cask iterm2
 require_cask sublime-text
+require_cask sshfs
 require_cask the-unarchiver
 require_cask vlc
 
