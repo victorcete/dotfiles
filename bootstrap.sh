@@ -95,6 +95,10 @@ require_brew fortune
 ### Programming languages
 require_brew go --with-cc-common
 
+### exercism.io
+brew tap homebrew/binary
+require_brew exercism
+
 #############################
 # 3. Brew Cask applications #
 #############################
