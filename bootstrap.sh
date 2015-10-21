@@ -81,23 +81,11 @@ require_brew wget
 ### Editors
 require_brew vim --override-system-vim
 
-### Docker
-require_brew fig
-require_brew docker
-require_brew boot2docker
-
-### Stores
-require_brew redis
-
 ### Misc
 require_brew fortune
 
 ### Programming languages
 require_brew go --with-cc-common
-
-### exercism.io
-brew tap homebrew/binary
-require_brew exercism
 
 #############################
 # 3. Brew Cask applications #
@@ -109,7 +97,6 @@ bot "Brew Cask apps"
 require_cask adium
 
 ### Music
-require_cask soundcleod
 require_cask spotify
 
 ### Utilities
@@ -127,10 +114,6 @@ require_cask firefox
 require_cask karabiner
 require_cask seil
 require_cask slate
-
-### Virtualization
-require_cask vagrant
-require_cask virtualbox
 
 bot "Done! Cleaning cache"
 brew cleanup > /dev/null 2>&1
