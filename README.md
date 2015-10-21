@@ -18,11 +18,7 @@ The aim is to have as much automated configuration as possible when you have to 
 
 - Installed with brew
   - ack
-  - boot2docker
   - coreutils
-  - docker
-  - exercism.io
-  - fig
   - findutils
   - fortune
   - git
@@ -39,13 +35,10 @@ The aim is to have as much automated configuration as possible when you have to 
   - karabiner
   - seil
   - slate
-  - soundcleod
   - spotify
   - sublime Text 2
   - sshfs
   - the Unarchiver
-  - vagrant
-  - virtualbox
   - vlc
 
 ## Installation steps
