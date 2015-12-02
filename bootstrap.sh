@@ -1,127 +1,206 @@
 #!/usr/bin/env bash
 
-##########################################################
-# Bootstrap script for Mac OS X Yosemite new installations
+############################################################
+# Bootstrap script for Mac OS X El Capitan new installations
 # @author Victor Lopez
-##########################################################
+############################################################
+
 
 # Include bash helpers
-# Source: https://github.com/atomantic/dotfiles/blob/master/lib.sh
-source misc/lib.sh
+# https://github.com/atomantic/dotfiles/blob/master/lib.sh
+# source misc/lib.sh
+source helpers.sh
 
-# Say hi
-bot "Welcome to a new OS X installation!"
-sleep 2
+# Say hello
+bot "New OS X installation! Please enter your sudo password before proceeding"
 
-#############################
-# 1. Homebrew and Brew Cask #
-#############################
+# Ask for the sudo password
+sudo -v
 
-# Install Homebrew
-bot "Homebrew and Brew Cask"
-running "Checking => Homebrew installation"
-brew_bin=$(which brew) 2>&1 > /dev/null
-if [[ $? != 0 ]]; then
-	action "Installing => Homebrew"
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        ok
-        if [[ $? != 0 ]]; then
-                error "unable to install homebrew, script $0 abort!"
-                exit -1
-                fi
+# update existing `sudo` time stamp until the script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+######################
+# 1. XCode CLI Tools #
+######################
+
+# xcode-cli: check installation
+if [ -d "/Library/Developer/CommandLineTools" ]; then
+	ok "xcode-cli: already installed"
 else
-        ok
+	running "xcode-cli: installing"
+	xcode-select --install
+	read -p "xcode-cli: press [ENTER] after finishing the installation..."
 fi
 
-# Run doctor + update
-running "Running => Homebrew doctor"
-brew doctor >/dev/null
-ok
+###########
+# 2. Brew #
+###########
 
-running "Updating => Homebrew"
-brew update >/dev/null
-ok
-
-# Brew Cask
-running "Checking => Homebrew Cask installation"
-output=$(brew tap | grep cask)
+# brew: check installation
+/usr/bin/which brew 2>&1 >/dev/null
 if [[ $? != 0 ]]; then
-        action "Installing => Homebrew Cask"
-        require_brew caskroom/cask/brew-cask
-        ok
+	running "brew: installing"
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	if [[ $? != 0 ]]; then
+		error "brew: unexpected problem, aborting"
+		exit 1
+	fi
 else
-        ok
+	ok "brew: already installed"
 fi
 
-############################
-# 2. Homebrew applications #
-############################
+# brew: doctor + update + upgrade
+running "brew: doctor"
+/usr/local/bin/brew doctor
+running "brew: update"
+/usr/local/bin/brew update
+running "brew: upgrade"
+/usr/local/bin/brew upgrade --all
 
-bot "Homebrew apps"
+########################
+# 3. Brew applications #
+########################
 
-### Utilities
+bot "brew applications"
 
 # http://beyondgrep.com/
 require_brew ack
 
-require_brew git
+# https://github.com/wting/autojump/
+require_brew autojump
 
-# https://www.gnu.org/software/coreutils
+# https://www.gnu.org/software/bash/
+require_brew bash
+
+# https://bash-completion.alioth.debian.org/
+require_brew bash-completion 
+
+# http://www.colordiff.org/
+require_brew colordiff
+
+# https://www.gnu.org/software/coreutils/
 require_brew coreutils
 
-# http://joeyh.name/code/moreutils/
-require_brew moreutils
+# http://curl.haxx.se/
+require_brew curl
 
 # http://www.gnu.org/software/findutils/
 require_brew findutils
 
-require_brew watch
-require_brew wget
-
-### Editors
-require_brew vim --override-system-vim
-
-### Misc
+# http://ftp.ibiblio.org/pub/linux/games/amusements/fortune/!INDEX.html/
 require_brew fortune
 
-### Programming languages
+# https://git-scm.com/
+require_brew git
+
+# Create git configuration
+/usr/local/bin/git config user.name 2>&1 >/dev/null
+if [[ $? -ne 0 ]] || [[ ! -f $HOME/.gitconfig ]]; then
+	# Generate ~/.gitconfig
+	echo -n "[git] enter your user.name and press [ENTER]: "
+	read name
+	echo -n "[git] enter your user.email and press [ENTER]: "
+	read email
+	cat > ~/.gitconfig <<EOF 
+[user]
+	name = ${name}
+	email = ${email}
+[merge]
+	tool = vimdiff
+[push]
+	default = simple
+EOF
+	ok "git: user settings configured"
+else
+	error "git: git config already present"
+fi
+
+# https://golang.org/
 require_brew go --with-cc-common
 
+# https://www.mercurial-scm.org/
+require_brew hg
+
+# https://github.com/xyb/homebrew-cask-completion
+require_brew homebrew/completions/brew-cask-completion
+
+# https://github.com/ekalinin/pip-bash-completion
+require_brew homebrew/completions/pip-completion
+
+# https://hub.github.com/
+# require_brew hub
+
+# http://joeyh.name/code/moreutils/
+require_brew moreutils
+
+# https://www.python.org/
+require_brew python
+$(which pip) install --upgrade pip setuptools 2>&1 >/dev/null
+
+# http://www.openssh.com/
+require_brew ssh-copy-id
+
+# https://tmux.github.io/
+require_brew tmux
+
+# http://mama.indstate.edu/users/ice/tree/
+require_brew tree
+
+# http://www.vim.org/
+require_brew vim --override-system-vi
+
+# https://gitlab.com/procps-ng/procps/
+require_brew watch
+
+# https://www.gnu.org/software/wget/
+require_brew wget
+
+running "brew: cleanup"
+/usr/local/bin/brew cleanup
+
+################
+# 4. Brew Cask #
+################
+
+# brew-cask: check installation
+running "brew: cask"
+/usr/local/bin/brew tap | grep cask
+if [[ $? != 0 ]]; then
+	action "brew-cask: installing"
+	require_brew caskroom/cask/brew-cask
+else
+	ok "brew-cask: already installed"
+fi
+
+# brew-cask: tap dev/beta versions
+brew tap caskroom/versions 2>&1 >/dev/null
+
 #############################
-# 3. Brew Cask applications #
+# 5. Brew Cask applications #
 #############################
 
-bot "Brew Cask apps"
+bot "brew-cask applications"
 
-### Chat
-require_cask adium
+# https://www.adium.im/
+# require_cask adium
 
-### Music
+# https://www.iterm2.com/
+require_cask iterm2-beta
+
+# https://www.spotify.com/
 require_cask spotify
 
-### Utilities
-require_cask iterm2
-require_cask sublime-text
+# http://www.sublimetext.com/3/
+require_cask sublime-text3
+
+# https://osxfuse.github.io/
 require_cask sshfs
+
+# http://unarchiver.c3.cx/unarchiver/
 require_cask the-unarchiver
+
+# https://www.videolan.org/vlc/
 require_cask vlc
 
-### Web browsers
-require_cask google-chrome
-require_cask firefox
-
-### Window managements
-require_cask karabiner
-require_cask seil
-require_cask slate
-
-bot "Done! Cleaning cache"
-brew cleanup > /dev/null 2>&1
-
-# Set up Github SSH keys
-#ok "Generating SSH key for Github"
-#read -p "Enter your email: " email ; echo
-#ssh-keygen -t rsa -C "$email" -f $HOME/.ssh/id_rsa_github
-#cat ~/.ssh/id_rsa_github.pub
-#cat ~/.ssh/id_rsa_github.pub | pbcopy
-#ok "Public key copied on the clipboard. Now, add the key to your Github account - https://github.com/account/ssh and press enter to continue."
+exit 0
