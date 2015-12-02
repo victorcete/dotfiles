@@ -8,8 +8,7 @@
 
 # Include bash helpers
 # https://github.com/atomantic/dotfiles/blob/master/lib.sh
-# source misc/lib.sh
-source helpers.sh
+source misc/lib.sh
 
 # Say hello
 bot "New OS X installation! Please enter your sudo password before proceeding"
