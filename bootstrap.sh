@@ -202,4 +202,60 @@ require_cask the-unarchiver
 # https://www.videolan.org/vlc/
 require_cask vlc
 
+#####################################
+# 6. Window management applications #
+#####################################
+
+bot "window management apps"
+# https://pqrs.org/osx/karabiner/seil.html.en/
+require_cask seil
+
+defaults -currentHost read -g | grep modifiermapping 2>&1 >/dev/null
+if [ $? -eq 0 ]; then
+	ok "seil: caps lock key already disabled"
+else
+	keyboard_vendorid=`ioreg -n IOHIDKeyboard -r | grep '"VendorID"' | awk -F '=' '{print $2}' | sed 's/ //g'`
+	keyboard_productid=`ioreg -n IOHIDKeyboard -r | grep '"ProductID"' | awk -F '=' '{print $2}' | sed 's/ //g'`
+	action "seil: disabling caps lock key"
+	defaults -currentHost write -g com.apple.keyboard.modifiermapping.${keyboard_vendorid}-${keyboard_productid}-0 \
+	-array '<dict><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer><key>HIDKeyboardModifierMappingDst</key><integer>-1</integer></dict>'
+	read -p "seil: run Seil - remap capslock key to keycode 80 and press [ENTER] to continue"
+fi
+
+# https://pqrs.org/osx/karabiner/
+require_cask karabiner
+
+# Check if Karabiner is present on the system
+karabiner_dir="/Users/$(whoami)/Library/Application Support/Karabiner/"
+
+if [ -d "${karabiner_dir}" ]; then
+	ok "karabiner: found in ${karabiner_dir}"
+else
+	read -p "karabiner: run the application and allow the accesibility permissions, then press [ENTER]"
+fi
+# Create a backup of the private.xml config, just in case
+config=private.xml
+config_backup=private.xml.bak
+config_local="/Users/$(whoami)/.dotfiles/Karabiner/private.xml"
+
+if [ -f "${karabiner_dir}${config}" ]; then
+    if [ ! -f "${karabiner_dir}${config_backup}" ]; then
+        ok "karabiner: found previous config file"
+        /bin/mv "${karabiner_dir}${config}" "${karabiner_dir}${config_backup}" 2>&1 >/dev/null
+        ok "karabiner: created a backup on ${karabiner_dir}${config_backup}"
+    else
+        ok "karabiner: backup already in place, skipping"
+    fi
+else
+    warn "karabiner: couldn't find any previous config so... no backup for you"
+fi
+
+# Create symlink
+if [ ! -h "${karabiner_dir}${config}" ]; then
+	/bin/ln -s "${config_local}" "${karabiner_dir}${config}"
+	ok "karabiner: new config symlink created. ${karabiner_dir}${config} -> ${config_local}"
+else
+	ok "karabiner: config symlink already in place, skipping"
+fi
+
 exit 0
