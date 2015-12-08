@@ -258,4 +258,30 @@ else
 	ok "karabiner: config symlink already in place, skipping"
 fi
 
+# https://github.com/mattr-/slate/
+require_cask slate
+
+# Create a backup of the existing configuration in case it already exists
+slate_cfg="/Users/$(whoami)/.slate"
+slate_cfg_backup="/Users/$(whoami)/.slate.bak"
+slate_cfg_local="/Users/$(whoami)/.dotfiles/Slate/slate_config"
+
+if [ -f "${slate_cfg}" ]; then
+	if [ ! -f "${slate_cfg_backup}" ]; then
+		ok "slate: found previous config file"
+		/bin/mv "${slate_cfg}" "${slate_cfg_backup}" 2>&1 >/dev/null
+		ok "slate: created a backup on ${slate_cfg_backup}"
+	else
+		ok "slate: backup already in place, skipping"
+	fi
+else
+    warn "slate: couldn't find any previous config so... no backup for you"
+fi
+
+# Create symlink
+if [ ! -h "${slate_cfg}" ]; then
+	/bin/ln -s "${slate_cfg_local}" "${slate_cfg}"
+	ok "slate: config symlink created. {slate_cfg_local} -> ${slate_cfg}"
+fi
+
 exit 0
