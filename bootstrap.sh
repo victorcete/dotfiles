@@ -231,6 +231,7 @@ require_cask the-unarchiver
 
 # https://www.virtualbox.org/
 require_cask virtualbox
+require_cask virtualbox-extension-pack
 
 # https://www.videolan.org/vlc/
 require_cask vlc
