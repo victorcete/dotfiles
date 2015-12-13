@@ -54,11 +54,11 @@ function require_cask() {
 }
 
 function require_brew() {
-    running "brew $1 $2"
+    running "brew $@"
     brew list $1 > /dev/null 2>&1 | true
     if [[ ${PIPESTATUS[0]} != 0 ]]; then
-        action "brew install $1 $2"
-        brew install $1 $2
+        action "brew install $@"
+        brew install "$@"
         if [[ $? != 0 ]]; then
             error "failed to install $1! aborting..."
             exit -1
