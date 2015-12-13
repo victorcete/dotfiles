@@ -36,7 +36,7 @@ fi
 # 2. Brew #
 ###########
 
-# brew: check installation
+# brew: check installation
 /usr/bin/which brew 2>&1 >/dev/null
 if [[ $? != 0 ]]; then
 	running "brew: installing"
@@ -74,6 +74,9 @@ require_brew bash
 
 # https://bash-completion.alioth.debian.org/
 require_brew bash-completion 
+
+# https://www.bitlbee.org/
+require_brew bitlbee
 
 # http://www.colordiff.org/
 require_brew colordiff
@@ -118,6 +121,9 @@ fi
 # https://golang.org/
 require_brew go --with-cc-common
 
+# https://www.gnupg.org/
+require_brew gpg
+
 # https://www.mercurial-scm.org/
 require_brew hg
 
@@ -130,8 +136,17 @@ require_brew homebrew/completions/pip-completion
 # https://hub.github.com/
 # require_brew hub
 
+# http://irssi.org/
+require_brew irssi
+
 # http://joeyh.name/code/moreutils/
 require_brew moreutils
+
+# http://www.mutt.org/
+require_brew kevwil/patches/mutt --with-gpgme --with-trash-patch --with-sidebar-patch --with-confirm-attachment-patch
+
+# https://bitbucket.org/blacktrash/muttils/
+require_brew muttils
 
 # https://www.python.org/
 require_brew python
@@ -184,8 +199,20 @@ bot "brew-cask applications"
 # https://www.adium.im/
 # require_cask adium
 
+# http://calibre-ebook.com/
+require_cask calibre
+
+# https://www.mozilla.org/en-US/firefox/
+require_cask firefox
+
+# https://www.google.com/chrome/
+require_cask google-chrome
+
 # https://www.iterm2.com/
 require_cask iterm2-beta
+
+# http://www.keepassx.org/
+require_cask keepassx
 
 # https://www.spotify.com/
 require_cask spotify
@@ -196,8 +223,14 @@ require_cask sublime-text3
 # https://osxfuse.github.io/
 require_cask sshfs
 
+# https://tunnelblick.net/
+require_cask tunnelblick
+
 # http://unarchiver.c3.cx/unarchiver/
 require_cask the-unarchiver
+
+# https://www.virtualbox.org/
+require_cask virtualbox
 
 # https://www.videolan.org/vlc/
 require_cask vlc
