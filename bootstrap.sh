@@ -136,6 +136,9 @@ require_brew homebrew/completions/pip-completion
 # https://hub.github.com/
 # require_brew hub
 
+# http://ipmitool.sourceforge.net/
+require_brew ipmitool
+
 # http://irssi.org/
 require_brew irssi
 
@@ -198,6 +201,9 @@ bot "brew-cask applications"
 
 # https://www.adium.im/
 # require_cask adium
+
+# http://lightheadsw.com/caffeine/
+require_cask caffeine
 
 # http://calibre-ebook.com/
 require_cask calibre
