@@ -133,6 +133,9 @@ require_brew homebrew/completions/brew-cask-completion
 # https://github.com/ekalinin/pip-bash-completion
 require_brew homebrew/completions/pip-completion
 
+# https://github.com/max-horvath/htop-osx
+require_brew htop-osx
+
 # https://hub.github.com/
 # require_brew hub
 
@@ -146,10 +149,10 @@ require_brew irssi
 require_brew moreutils
 
 # http://www.mutt.org/
-require_brew kevwil/patches/mutt --with-gpgme --with-trash-patch --with-sidebar-patch --with-confirm-attachment-patch
+# require_brew kevwil/patches/mutt --with-gpgme --with-trash-patch --with-sidebar-patch --with-confirm-attachment-patch
 
 # https://bitbucket.org/blacktrash/muttils/
-require_brew muttils
+# require_brew muttils
 
 # https://www.python.org/
 require_brew python
@@ -165,6 +168,7 @@ require_brew tmux
 require_brew tree
 
 # http://www.vim.org/
+touch ~/.vimrc 2>&1 >/dev/null
 require_brew vim --override-system-vi
 
 # https://gitlab.com/procps-ng/procps/
@@ -206,16 +210,16 @@ bot "brew-cask applications"
 require_cask caffeine
 
 # http://calibre-ebook.com/
-require_cask calibre
+# require_cask calibre
 
 # https://www.mozilla.org/en-US/firefox/
-require_cask firefox
+# require_cask firefox
 
 # https://www.google.com/chrome/
-require_cask google-chrome
+# require_cask google-chrome
 
 # https://www.iterm2.com/
-require_cask iterm2-beta
+require_cask iterm2
 
 # http://www.keepassx.org/
 require_cask keepassx
@@ -272,6 +276,7 @@ if [ -d "${karabiner_dir}" ]; then
 	ok "karabiner: found in ${karabiner_dir}"
 else
 	read -p "karabiner: run the application and allow the accesibility permissions, then press [ENTER]"
+	read -p "karabiner: go to System Preferences > Keyboard > Modifier Keys > Set Caps Lock to 'No Action', then press [ENTER]"
 fi
 # Create a backup of the private.xml config, just in case
 config=private.xml
