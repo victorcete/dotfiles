@@ -184,6 +184,12 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+
+" get rid of anoying ~file
+set nobackup
+
+" line numbers
+set number
 EOL
 require_brew vim --override-system-vi
 
