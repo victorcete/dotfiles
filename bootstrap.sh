@@ -133,6 +133,9 @@ require_brew homebrew/completions/brew-cask-completion
 # https://github.com/ekalinin/pip-bash-completion
 require_brew homebrew/completions/pip-completion
 
+# https://github.com/mitchellh/vagrant
+require_brew homebrew/completions/vagrant-completion
+
 # https://github.com/max-horvath/htop-osx
 require_brew htop-osx
 
@@ -168,7 +171,8 @@ require_brew tmux
 require_brew tree
 
 # http://www.vim.org/
-cat >~/.vimrc <<EOL
+if [ ! -f ~/.vimrc ]; then
+    cat >~/.vimrc <<EOL
 " color settings
 syntax on
 set bg=dark
@@ -191,6 +195,7 @@ set nobackup
 " line numbers
 set number
 EOL
+fi
 require_brew vim --override-system-vi
 
 # https://gitlab.com/procps-ng/procps/
@@ -260,6 +265,9 @@ require_cask tunnelblick
 
 # http://unarchiver.c3.cx/unarchiver/
 require_cask the-unarchiver
+
+# https://www.vagrantup.com/
+require_cask vagrant
 
 # https://www.virtualbox.org/
 require_cask virtualbox
