@@ -168,7 +168,23 @@ require_brew tmux
 require_brew tree
 
 # http://www.vim.org/
-touch ~/.vimrc 2>&1 >/dev/null
+cat >~/.vimrc <<EOL
+" color settings
+syntax on
+set bg=dark
+
+" backspace behaviour
+set backspace=indent,eol,start
+
+" indentation
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+EOL
 require_brew vim --override-system-vi
 
 # https://gitlab.com/procps-ng/procps/
