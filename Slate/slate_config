@@ -94,6 +94,7 @@ default 3monitor    resolutions:${mon-laptop};${mon-ext-1};${mon-ext-2}
 layout 1monitor 'Adium':REPEAT              ${1-full}
 layout 1monitor 'Google Chrome':REPEAT      ${1-full}
 layout 1monitor 'iTerm':REPEAT              ${1-full}
+layout 1monitor 'KeePassX':REPEAT           ${1-full}
 layout 1monitor 'Keynote':REPEAT            ${1-full}
 layout 1monitor 'Safari':REPEAT             ${1-full}
 layout 1monitor 'Spotify':REPEAT            ${1-full}
@@ -103,6 +104,7 @@ layout 1monitor 'Telegram':REPEAT           ${1-full}
 # layouts: 2 monitor
 ## first
 layout 2monitor 'Adium':REPEAT              ${1-full}
+layout 2monitor 'KeePassX':REPEAT           ${1-full}
 layout 2monitor 'Keynote':REPEAT            ${1-full}
 layout 2monitor 'Safari':REPEAT             ${1-full}
 layout 2monitor 'Spotify':REPEAT            ${1-full}
@@ -115,6 +117,7 @@ layout 2monitor 'iTerm':REPEAT              ${2-full}
 # layouts: 3 monitor
 ## first
 layout 3monitor 'Adium':REPEAT              ${1-full}
+layout 3monitor 'KeePassX':REPEAT           ${1-full}
 layout 3monitor 'Spotify':REPEAT            ${1-full}
 layout 3monitor 'Telegram':REPEAT           ${1-full}
 ## second
@@ -192,6 +195,7 @@ bind a:${master} focus 'Adium'
 bind c:${master} focus 'Safari'
 bind e:${master} focus 'Sublime Text'
 bind i:${master} focus 'iTerm'
-bind k:${master} focus 'Keynote'
+bind k:${master} focus 'KeePassX'
+bind n:${master} focus 'Keynote'
 bind s:${master} focus 'Spotify'
 bind t:${master} focus 'Telegram'
