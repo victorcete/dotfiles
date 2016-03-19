@@ -239,6 +239,9 @@ require_cask caffeine
 # http://calibre-ebook.com/
 # require_cask calibre
 
+# https://www.dropbox.com/
+require_cask dropbox
+
 # https://www.mozilla.org/en-US/firefox/
 # require_cask firefox
 
