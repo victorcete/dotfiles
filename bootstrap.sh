@@ -148,6 +148,9 @@ require_brew ipmitool
 # http://irssi.org/
 require_brew irssi
 
+# https://github.com/lra/mackup
+require_brew mackup
+
 # http://joeyh.name/code/moreutils/
 require_brew moreutils
 
