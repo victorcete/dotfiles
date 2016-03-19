@@ -178,7 +178,7 @@ if [ ! -f ~/.vimrc ]; then
     cat >~/.vimrc <<EOL
 " color settings
 syntax on
-set bg=dark
+set bg=light
 
 " backspace behaviour
 set backspace=indent,eol,start
