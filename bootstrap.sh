@@ -257,6 +257,9 @@ require_cask iterm2
 # http://www.keepassx.org/
 require_cask keepassx
 
+# https://slack.com/
+require_cask slack
+
 # https://www.spotify.com/
 require_cask spotify
 
