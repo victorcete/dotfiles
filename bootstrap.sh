@@ -212,7 +212,7 @@ popd
 
 # put some basic .vimrc config
 if [ ! -f ~/.vimrc ]; then
-    cat >~/.vimrc <<EOL
+    cat >~/.vimrc <<EOF
 " pathogen
 execute pathogen#infect()
 
@@ -238,7 +238,7 @@ set nobackup
 
 " line numbers
 set number
-EOL
+EOF
 fi
 
 # https://gitlab.com/procps-ng/procps/
@@ -256,6 +256,59 @@ require_brew zsh-completions
 # https://github.com/robbyrussell/oh-my-zsh
 running "installing: oh my zsh"
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+cat >> ~/.zshrc <<EOF
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="agnoster"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+plugins=(autojump brew brew-cask colored-man-pages git github python zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+
+# -------------------------------------------------------------------
+# User configuration section
+# -------------------------------------------------------------------
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# virtualenvwrapper
+export WORKON_HOME=~/.envs
+source /usr/local/bin/virtualenvwrapper.sh
+
+# -------------------------------------------------------------------
+# Misc aliases
+# -------------------------------------------------------------------
+alias zshconfig="subl ~/.zshrc"
+
+# -------------------------------------------------------------------
+# Git aliases
+# -------------------------------------------------------------------
+alias ga='git add -A'
+alias gp='git push'
+alias gl='git log'
+alias gs='git status'
+alias gd='git diff'
+alias gm='git commit -m'
+alias gam='git commit -am'
+alias gma='git commit -am'
+alias gb='git branch'
+alias gc='git checkout'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gpu='git pull'
+alias gcl='git clone'
+alias gta='git tag -a -m'
+alias gf='git reflog'
+EOF
 
 running "brew: cleanup"
 /usr/local/bin/brew cleanup
