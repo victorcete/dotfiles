@@ -63,17 +63,33 @@ running "brew: upgrade"
 
 bot "brew applications"
 
+# brew add sbin to PATH
+cat >> ~/.bash_profile <<EOF
+# brew
+export PATH="/usr/local/sbin:$PATH"
+EOF
+
 # http://beyondgrep.com/
 require_brew ack
 
 # https://github.com/wting/autojump/
 require_brew autojump
+cat >> ~/.bash_profile <<EOF
+# autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+EOF
 
 # https://www.gnu.org/software/bash/
 require_brew bash
 
 # https://bash-completion.alioth.debian.org/
 require_brew bash-completion 
+cat >> ~/.bash_profile <<EOF
+# bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+EOF
 
 # https://www.bitlbee.org/
 require_brew bitlbee
