@@ -207,6 +207,12 @@ require_brew watch
 # https://www.gnu.org/software/wget/
 require_brew wget
 
+# http://www.zsh.org/
+require_brew zsh
+
+# https://github.com/zsh-users/zsh-completions
+require_brew zsh-completions
+
 running "brew: cleanup"
 /usr/local/bin/brew cleanup
 
