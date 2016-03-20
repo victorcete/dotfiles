@@ -179,6 +179,7 @@ require_brew moreutils
 # https://www.python.org/
 require_brew python
 $(which pip) install --upgrade pip setuptools 2>&1 >/dev/null
+$(which pip) install pep8 2>&1 >/dev/null
 $(which pip) install virtualenv 2>&1 >/dev/null
 $(which pip) install virtualenvwrapper 2>&1 >/dev/null
 export WORKON_HOME=~/.envs
