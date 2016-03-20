@@ -213,6 +213,10 @@ require_brew zsh
 # https://github.com/zsh-users/zsh-completions
 require_brew zsh-completions
 
+# https://github.com/robbyrussell/oh-my-zsh
+running "installing: oh my zsh"
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
 running "brew: cleanup"
 /usr/local/bin/brew cleanup
 
