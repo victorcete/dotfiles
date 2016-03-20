@@ -97,6 +97,9 @@ require_brew bitlbee
 # http://www.colordiff.org/
 require_brew colordiff
 
+# https://web.archive.org/web/20120225123719/http://www.nog.net/~tony/warez/cowsay.shtml
+require_brew cowthink
+
 # https://www.gnu.org/software/coreutils/
 require_brew coreutils
 
@@ -269,9 +272,12 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(autojump brew brew-cask colored-man-pages git github python zsh-syntax-highlighting)
+plugins=(autojump brew brew-cask chucknorris colored-man-pages git github python zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+# Display some random Chuck stuff :p
+chuck_cow
 
 # -------------------------------------------------------------------
 # User configuration section
