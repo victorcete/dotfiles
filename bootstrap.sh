@@ -179,6 +179,15 @@ require_brew moreutils
 # https://www.python.org/
 require_brew python
 $(which pip) install --upgrade pip setuptools 2>&1 >/dev/null
+$(which pip) install virtualenv 2>&1 >/dev/null
+$(which pip) install virtualenvwrapper 2>&1 >/dev/null
+export WORKON_HOME=~/.envs
+$(which mkdir) -p $WORKON_HOME 2>&1 >/dev/null
+cat >> ~/.bash_profile <<EOF
+# python virtualenvwrapper
+export WORKON_HOME=~/.envs
+source /usr/local/bin/virtualenvwrapper.sh
+EOF
 
 # http://www.openssh.com/
 require_brew ssh-copy-id
