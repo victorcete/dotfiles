@@ -484,4 +484,7 @@ $(which wget) "https://github.com/mbadolato/iTerm2-Color-Schemes/tarball/master"
 bot "Downloading Meslo font (for powerline)"
 $(which wget) "https://github.com/powerline/fonts/raw/master/Meslo/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.otf" -O ~/Downloads/Meslo_Regular_Powerline.otf
 
+bot "Downloading Ubuntu fonts"
+$(which wget) "http://font.ubuntu.com/download/ubuntu-font-family-0.83.zip" -O ~/Downloads/ubuntu-font-family-0.83.zip
+
 exit 0
