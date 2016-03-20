@@ -488,4 +488,7 @@ $(which wget) "https://github.com/powerline/fonts/raw/master/Meslo/Meslo%20LG%20
 bot "Downloading Ubuntu fonts"
 $(which wget) "http://font.ubuntu.com/download/ubuntu-font-family-0.83.zip" -O ~/Downloads/ubuntu-font-family-0.83.zip
 
+bot "Downloading Hack font"
+$(which wget) "https://github.com/chrissimpkins/Hack/releases/download/v2.019/Hack-v2_019-ttf.zip" -O ~/Downloads/Hack-v2_019-ttf.zip
+
 exit 0
