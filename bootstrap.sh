@@ -199,11 +199,27 @@ require_brew tmux
 require_brew tree
 
 # http://www.vim.org/
+require_brew vim --override-system-vi
+
+# install pathogen
+$(which mkdir) -p ~/.vim/{autoload,bundle} 2>&1 >/dev/null
+$(which curl) -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim 2>&1 >/dev/null
+
+# get solarized colors for vim
+pushd ~/.vim/bundle
+git clone git://github.com/altercation/vim-colors-solarized.git
+popd
+
+# put some basic .vimrc config
 if [ ! -f ~/.vimrc ]; then
     cat >~/.vimrc <<EOL
+" pathogen
+execute pathogen#infect()
+
 " color settings
 syntax on
-set bg=light
+set bg=dark
+colorscheme solarized
 
 " backspace behaviour
 set backspace=indent,eol,start
@@ -224,7 +240,6 @@ set nobackup
 set number
 EOL
 fi
-require_brew vim --override-system-vi
 
 # https://gitlab.com/procps-ng/procps/
 require_brew watch
@@ -402,5 +417,18 @@ if [ ! -h "${slate_cfg}" ]; then
 	/bin/ln -s "${slate_cfg_local}" "${slate_cfg}"
 	ok "slate: config symlink created. {slate_cfg_local} -> ${slate_cfg}"
 fi
+
+#####################################
+# 7. Miscellaneous downloads        #
+#####################################
+
+bot "Downloading misc stuff! Check ~/Downloads after this!"
+$(which sleep) 2
+
+bot "Downloading iTerm2 color schemes"
+$(which wget) "https://github.com/mbadolato/iTerm2-Color-Schemes/tarball/master" -O ~/Downloads/iTerm2-colorschemes.tar.gz
+
+bot "Downloading Meslo font (for powerline)"
+$(which wget) "https://github.com/powerline/fonts/raw/master/Meslo/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.otf" -O ~/Downloads/Meslo_Regular_Powerline.otf
 
 exit 0
