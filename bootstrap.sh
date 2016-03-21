@@ -139,6 +139,11 @@ fi
 
 # https://golang.org/
 require_brew go --with-cc-common
+$(which mkdir) -p ~/go/{bin,pkg,src} 2>&1 >/dev/null
+cat >> ~/.bash_profile <<EOF
+# golang
+export GOPATH=~/go
+EOF
 
 # https://www.gnupg.org/
 require_brew gpg
@@ -286,6 +291,9 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# golang
+export GOPATH=~/go
 
 # virtualenvwrapper
 export WORKON_HOME=~/.envs
