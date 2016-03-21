@@ -146,6 +146,13 @@ export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 EOF
 
+# install some golang packages
+export GOPATH=~/go
+go get -u golang.org/x/tools/cmd/goimports 2>&1 >/dev/null
+go get -u golang.org/x/tools/cmd/vet 2>&1 >/dev/null
+go get -u golang.org/x/tools/cmd/oracle 2>&1 >/dev/null
+go get -u golang.org/x/tools/cmd/godoc 2>&1 >/dev/null
+
 # https://www.gnupg.org/
 require_brew gpg
 
