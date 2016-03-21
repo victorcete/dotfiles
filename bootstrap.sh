@@ -319,6 +319,7 @@ alias zshconfig="subl ~/.zshrc"
 alias ga='git add -A'
 alias gp='git push'
 alias gl='git log'
+alias glr='git log --reverse'
 alias gs='git status'
 alias gd='git diff'
 alias gm='git commit -m'
