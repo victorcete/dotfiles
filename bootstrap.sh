@@ -143,6 +143,7 @@ $(which mkdir) -p ~/go/{bin,pkg,src} 2>&1 >/dev/null
 cat >> ~/.bash_profile <<EOF
 # golang
 export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
 EOF
 
 # https://www.gnupg.org/
@@ -294,6 +295,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # golang
 export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
 
 # virtualenvwrapper
 export WORKON_HOME=~/.envs
