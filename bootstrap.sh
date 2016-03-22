@@ -285,7 +285,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(autojump brew brew-cask chucknorris colored-man-pages git github python zsh-syntax-highlighting)
+plugins=(autojump brew brew-cask chucknorris colored-man-pages git github python vagrant zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
