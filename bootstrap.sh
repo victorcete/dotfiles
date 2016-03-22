@@ -300,6 +300,9 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
+# docker-machine
+eval $(docker-machine env) 2>&1 >/dev/null
+
 # golang
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
@@ -369,6 +372,9 @@ require_cask caffeine
 
 # http://calibre-ebook.com/
 # require_cask calibre
+
+# https://www.docker.com/toolbox
+require_cask dockertoolbox
 
 # https://www.dropbox.com/
 require_cask dropbox
