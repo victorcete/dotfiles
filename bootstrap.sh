@@ -365,7 +365,7 @@ brew tap caskroom/versions 2>&1 >/dev/null
 bot "brew-cask applications"
 
 # https://www.adium.im/
-# require_cask adium
+require_cask adium
 
 # http://lightheadsw.com/caffeine/
 require_cask caffeine
