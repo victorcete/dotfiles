@@ -223,9 +223,11 @@ $(which mkdir) -p ~/.vim/{autoload,bundle} 2>&1 >/dev/null
 $(which curl) -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim 2>&1 >/dev/null
 
 # get solarized colors for vim
-pushd ~/.vim/bundle
-git clone git://github.com/altercation/vim-colors-solarized.git
-popd
+pushd ~/.vim/bundle 2>&1 >/dev/null
+if [ ! -d vim-colors-solarized ]; then
+    git clone git://github.com/altercation/vim-colors-solarized.git 2>&1 >/dev/null
+fi
+popd 2>&1 >/dev/null
 
 # put some basic .vimrc config
 if [ ! -f ~/.vimrc ]; then
@@ -272,11 +274,11 @@ require_brew zsh-completions
 
 # https://github.com/robbyrussell/oh-my-zsh
 running "installing: oh my zsh"
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+curl -sL https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
-cat >> ~/.zshrc <<EOF
+cat > ~/.zshrc <<EOF
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=\$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -287,7 +289,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(autojump brew brew-cask chucknorris colored-man-pages git github python vagrant zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
+source \$ZSH/oh-my-zsh.sh
 
 # Display some random Chuck stuff :p
 chuck_cow
@@ -298,14 +300,14 @@ chuck_cow
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # autojump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+[[ -s \$(brew --prefix)/etc/profile.d/autojump.sh ]] && . \$(brew --prefix)/etc/profile.d/autojump.sh
 
 # docker-machine
-eval $(docker-machine env) 2>&1 >/dev/null
+eval \$(docker-machine env) 2>&1 >/dev/null
 
 # golang
 export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=\$PATH:\$GOPATH/bin
 
 # virtualenvwrapper
 export WORKON_HOME=~/.envs
