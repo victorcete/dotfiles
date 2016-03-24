@@ -197,6 +197,7 @@ bind down:${master}     focus down
 bind a:${master} focus 'Adium'
 bind c:${master} focus 'Safari'
 bind e:${master} focus 'Sublime Text'
+bind g:${master} focus 'Chrome'
 bind i:${master} focus 'iTerm'
 bind k:${master} focus 'KeePassX'
 bind l:${master} focus 'Slack'
