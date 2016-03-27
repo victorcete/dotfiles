@@ -96,6 +96,7 @@ layout 1monitor 'Google Chrome':REPEAT      ${1-full}
 layout 1monitor 'iTerm':REPEAT              ${1-full}
 layout 1monitor 'KeePassX':REPEAT           ${1-full}
 layout 1monitor 'Keynote':REPEAT            ${1-full}
+layout 1monitor 'Photos':REPEAT             ${1-full}
 layout 1monitor 'Safari':REPEAT             ${1-full}
 layout 1monitor 'Slack':REPEAT              ${1-full}
 layout 1monitor 'Spotify':REPEAT            ${1-full}
@@ -107,6 +108,7 @@ layout 1monitor 'Telegram':REPEAT           ${1-full}
 layout 2monitor 'Adium':REPEAT              ${1-full}
 layout 2monitor 'KeePassX':REPEAT           ${1-full}
 layout 2monitor 'Keynote':REPEAT            ${1-full}
+layout 2monitor 'Photos':REPEAT             ${1-full}
 layout 2monitor 'Safari':REPEAT             ${1-full}
 layout 2monitor 'Slack':REPEAT              ${1-full}
 layout 2monitor 'Spotify':REPEAT            ${1-full}
@@ -120,6 +122,7 @@ layout 2monitor 'iTerm':REPEAT              ${2-full}
 ## first
 layout 3monitor 'Adium':REPEAT              ${1-full}
 layout 3monitor 'KeePassX':REPEAT           ${1-full}
+layout 3monitor 'Photos':REPEAT             ${1-full}
 layout 3monitor 'Slack':REPEAT              ${1-full}
 layout 3monitor 'Spotify':REPEAT            ${1-full}
 layout 3monitor 'Telegram':REPEAT           ${1-full}
@@ -202,5 +205,6 @@ bind i:${master} focus 'iTerm'
 bind k:${master} focus 'KeePassX'
 bind l:${master} focus 'Slack'
 bind n:${master} focus 'Keynote'
+bind p:${master} focus 'Photos'
 bind s:${master} focus 'Spotify'
 bind t:${master} focus 'Telegram'
