@@ -197,7 +197,7 @@ execute pathogen#infect()
 
 " color settings
 syntax on
-set bg=dark
+set bg=light
 colorscheme solarized
 
 " backspace behaviour
