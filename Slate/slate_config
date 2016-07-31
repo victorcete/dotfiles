@@ -93,7 +93,7 @@ default 3monitor    resolutions:${mon-laptop};${mon-ext-1};${mon-ext-2}
 # layouts: 1 monitor
 layout 1monitor 'Adium':REPEAT              ${1-full}
 layout 1monitor 'Google Chrome':REPEAT      ${1-full}
-layout 1monitor 'iTerm':REPEAT              ${1-full}
+layout 1monitor 'iTerm2':REPEAT             ${1-full}
 layout 1monitor 'KeePassX':REPEAT           ${1-full}
 layout 1monitor 'Keynote':REPEAT            ${1-full}
 layout 1monitor 'Photos':REPEAT             ${1-full}
@@ -102,6 +102,7 @@ layout 1monitor 'Slack':REPEAT              ${1-full}
 layout 1monitor 'Spotify':REPEAT            ${1-full}
 layout 1monitor 'Sublime Text':REPEAT       ${1-full}
 layout 1monitor 'Telegram':REPEAT           ${1-full}
+layout 1monitor 'Vivaldi':REPEAT            ${1-full}
 
 # layouts: 2 monitor
 ## first
@@ -114,9 +115,10 @@ layout 2monitor 'Slack':REPEAT              ${1-full}
 layout 2monitor 'Spotify':REPEAT            ${1-full}
 layout 2monitor 'Sublime Text':REPEAT       ${1-full}
 layout 2monitor 'Telegram':REPEAT           ${1-full}
+layout 2monitor 'Vivaldi':REPEAT            ${1-full}
 ## second
 layout 2monitor 'Google Chrome':REPEAT      ${2-full}
-layout 2monitor 'iTerm':REPEAT              ${2-full}
+layout 2monitor 'iTerm2':REPEAT             ${2-full}
 
 # layouts: 3 monitor
 ## first
@@ -130,8 +132,9 @@ layout 3monitor 'Telegram':REPEAT           ${1-full}
 layout 3monitor 'Google Chrome':REPEAT      ${2-full}
 layout 3monitor 'Keynote':REPEAT            ${2-full}
 layout 3monitor 'Safari':REPEAT             ${2-full}
+layout 3monitor 'Vivaldi':REPEAT            ${1-full}
 ## third
-layout 3monitor 'iTerm':REPEAT              ${3-full}
+layout 3monitor 'iTerm2':REPEAT             ${3-full}
 layout 3monitor 'Sublime Text':REPEAT       ${3-full}
 
 ####################
@@ -198,10 +201,10 @@ bind down:${master}     focus down
 
 # bindings: applications
 bind a:${master} focus 'Adium'
-bind c:${master} focus 'Safari'
+bind c:${master} focus 'Vivaldi'
 bind e:${master} focus 'Sublime Text'
 bind g:${master} focus 'Google Chrome'
-bind i:${master} focus 'iTerm'
+bind i:${master} focus 'iTerm2'
 bind k:${master} focus 'KeePassX'
 bind l:${master} focus 'Slack'
 bind n:${master} focus 'Keynote'
