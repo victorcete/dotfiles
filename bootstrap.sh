@@ -91,14 +91,8 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 EOF
 
-# https://www.bitlbee.org/
-require_brew bitlbee
-
 # http://www.colordiff.org/
 require_brew colordiff
-
-# https://web.archive.org/web/20120225123719/http://www.nog.net/~tony/warez/cowsay.shtml
-require_brew cowthink
 
 # https://www.gnu.org/software/coreutils/
 require_brew coreutils
@@ -108,9 +102,6 @@ require_brew curl
 
 # http://www.gnu.org/software/findutils/
 require_brew findutils
-
-# http://ftp.ibiblio.org/pub/linux/games/amusements/fortune/!INDEX.html/
-require_brew fortune
 
 # https://git-scm.com/
 require_brew git
@@ -137,22 +128,6 @@ else
 	error "git: git config already present"
 fi
 
-# https://golang.org/
-require_brew go --with-cc-common
-$(which mkdir) -p ~/go/{bin,pkg,src} 2>&1 >/dev/null
-cat >> ~/.bash_profile <<EOF
-# golang
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
-EOF
-
-# install some golang packages
-export GOPATH=~/go
-go get -u golang.org/x/tools/cmd/goimports 2>&1 >/dev/null
-go get -u golang.org/x/tools/cmd/vet 2>&1 >/dev/null
-go get -u golang.org/x/tools/cmd/oracle 2>&1 >/dev/null
-go get -u golang.org/x/tools/cmd/godoc 2>&1 >/dev/null
-
 # https://www.gnupg.org/
 require_brew gpg
 
@@ -171,26 +146,11 @@ require_brew homebrew/completions/vagrant-completion
 # https://github.com/max-horvath/htop-osx
 require_brew htop-osx
 
-# https://hub.github.com/
-# require_brew hub
-
-# http://ipmitool.sourceforge.net/
-require_brew ipmitool
-
-# http://irssi.org/
-require_brew irssi
-
 # https://github.com/lra/mackup
-require_brew mackup
+# require_brew mackup
 
 # http://joeyh.name/code/moreutils/
 require_brew moreutils
-
-# http://www.mutt.org/
-# require_brew kevwil/patches/mutt --with-gpgme --with-trash-patch --with-sidebar-patch --with-confirm-attachment-patch
-
-# https://bitbucket.org/blacktrash/muttils/
-# require_brew muttils
 
 # https://www.python.org/
 require_brew python
@@ -266,79 +226,10 @@ require_brew watch
 # https://www.gnu.org/software/wget/
 require_brew wget
 
-# http://www.zsh.org/
-require_brew zsh
-
-# https://github.com/zsh-users/zsh-completions
-require_brew zsh-completions
-
-# https://github.com/robbyrussell/oh-my-zsh
-running "installing: oh my zsh"
-curl -sL https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-
-cat > ~/.zshrc <<EOF
-# Path to your oh-my-zsh installation.
-export ZSH=\$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(autojump brew brew-cask chucknorris colored-man-pages git github python vagrant zsh-syntax-highlighting)
-
-source \$ZSH/oh-my-zsh.sh
-
-# Display some random Chuck stuff :p
-chuck_cow
-
 # -------------------------------------------------------------------
 # User configuration section
 # -------------------------------------------------------------------
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-
-# autojump
-[[ -s \$(brew --prefix)/etc/profile.d/autojump.sh ]] && . \$(brew --prefix)/etc/profile.d/autojump.sh
-
-# docker-machine
-eval \$(docker-machine env) 2>&1 >/dev/null
-
-# golang
-export GOPATH=~/go
-export PATH=\$PATH:\$GOPATH/bin
-
-# virtualenvwrapper
-export WORKON_HOME=~/.envs
-source /usr/local/bin/virtualenvwrapper.sh
-
-# -------------------------------------------------------------------
-# Misc aliases
-# -------------------------------------------------------------------
-alias zshconfig="subl ~/.zshrc"
-
-# -------------------------------------------------------------------
-# Git aliases
-# -------------------------------------------------------------------
-alias ga='git add -A'
-alias gp='git push'
-alias gl='git log'
-alias glr='git log --reverse'
-alias gs='git status'
-alias gd='git diff'
-alias gm='git commit -m'
-alias gam='git commit -am'
-alias gma='git commit -am'
-alias gb='git branch'
-alias gc='git checkout'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
-alias gta='git tag -a -m'
-alias gf='git reflog'
-EOF
 
 running "brew: cleanup"
 /usr/local/bin/brew cleanup
@@ -366,26 +257,12 @@ brew tap caskroom/versions 2>&1 >/dev/null
 
 bot "brew-cask applications"
 
-# https://www.adium.im/
-require_cask adium
-
 # http://lightheadsw.com/caffeine/
 require_cask caffeine
 
-# http://calibre-ebook.com/
-# require_cask calibre
-
-# https://www.docker.com/toolbox
-require_cask dockertoolbox
-
-# https://www.dropbox.com/
-require_cask dropbox
-
-# https://www.mozilla.org/en-US/firefox/
-# require_cask firefox
-
-# https://www.google.com/chrome/
-# require_cask google-chrome
+# https://www.docker.com/products/docker
+require_cask docker
+read -p "docker: run Docker now for initial set-up and press [ENTER] to continue"
 
 # https://www.iterm2.com/
 require_cask iterm2
@@ -400,10 +277,13 @@ require_cask slack
 require_cask spotify
 
 # http://www.sublimetext.com/3/
-require_cask sublime-text3
+require_cask sublime-text
 
 # https://osxfuse.github.io/
 require_cask sshfs
+
+# https://macos.telegram.org
+require_cask telegram
 
 # https://tunnelblick.net/
 require_cask tunnelblick
@@ -417,6 +297,9 @@ require_cask vagrant
 # https://www.virtualbox.org/
 require_cask virtualbox
 require_cask virtualbox-extension-pack
+
+# https://vivaldi.com
+require_cask vivaldi
 
 # https://www.videolan.org/vlc/
 require_cask vlc
@@ -474,6 +357,7 @@ fi
 if [ ! -h "${karabiner_dir}${config}" ]; then
 	/bin/ln -s "${config_local}" "${karabiner_dir}${config}"
 	ok "karabiner: new config symlink created. ${karabiner_dir}${config} -> ${config_local}"
+	read -p "karabiner: run the application and click on 'Reload XML' and enable the master key, then press [ENTER]"
 else
 	ok "karabiner: config symlink already in place, skipping"
 fi
