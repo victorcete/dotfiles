@@ -257,6 +257,9 @@ brew tap caskroom/versions 2>&1 >/dev/null
 
 bot "brew-cask applications"
 
+# https://www.android.com/filetransfer/
+require_cask android-file-transfer
+
 # http://lightheadsw.com/caffeine/
 require_cask caffeine
 
