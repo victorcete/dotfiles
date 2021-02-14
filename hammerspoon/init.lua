@@ -12,7 +12,7 @@ function batteryWatcherCallback()
     end
 
     if not batteryCharging then
-        if batteryPercentage < 40 then
+        if batteryPercentage < 35 then
             hs.notify.new({title="Hammerspoon", informativeText="Low battery.", autoWithdraw=false}):send()
         end
     end
