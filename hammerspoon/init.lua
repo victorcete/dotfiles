@@ -8,12 +8,12 @@ function batteryWatcherCallback()
     batteryCharged = hs.battery.isCharged()
 
     if batteryCharged then
-        hs.alert.show("battery charged, please disconnect")
+        hs.notify.new({title="Hammerspoon", informativeText="Battery charged. Please disconnect now."}):send()
     end
 
     if not batteryCharging then
         if batteryPercentage < 40 then
-            hs.alert.show("please connect the charger")
+            hs.notify.new({title="Hammerspoon", informativeText="Low battery. Please connect the charger now."}):send()
         end
     end
 end
